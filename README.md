@@ -1,5 +1,5 @@
-# Awesome React State Management
-A more deep explained version of https://github.com/enaqx/awesome-react#react-state-management
+# Awesome React State Management [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+A more deep explained version of https://github.com/enaqx/awesome-react#react-state-management 
 
 - [context](https://beta.reactjs.org/reference/react/useContext) - React Context API (useContext)
 - [redux](https://github.com/reduxjs/redux) - Predictable State Container for JavaScript Apps
