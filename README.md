@@ -1,25 +1,26 @@
 # Awesome React State Management [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 This repository provides a deeper explanation of the various state management libraries for React, as listed in the [Awesome React repository](https://github.com/enaqx/awesome-react#react-state-management ).
 
-- [context](https://beta.reactjs.org/reference/react/useContext) - React Context API (useContext)
-- [redux](https://github.com/reduxjs/redux) - Predictable State Container for JavaScript Apps
-- [mobx](https://github.com/mobxjs/mobx) - Simple, scalable state management
-- [react-query](https://github.com/tannerlinsley/react-query) - Hooks for fetching, caching and updating asynchronous data in React
-- [flux](http://facebook.github.io/flux/) - Application architecture for building user interfaces
-- [recoil](https://github.com/facebookexperimental/Recoil) - Experimental state management library for React apps
-- [jotai](https://github.com/pmndrs/jotai) - Bottom-up approach to React state management with an atomic model
-- [xstate-react](https://github.com/davidkpiano/xstate/tree/master/packages/xstate-react) - State machines and statecharts for the modern web
-- [zustand](https://github.com/pmndrs/zustand) - Bear necessities for state management in React
-- [easy-peasy](https://github.com/ctrlplusb/easy-peasy) - Vegetarian friendly state for React
-- [hookstate](https://github.com/avkonst/hookstate) - The simple but very powerful and incredibly fast state management for React that is based on hooks
-- [effector](https://github.com/zerobias/effector) - Fast and powerful reactive state manager
-- [reactn](https://github.com/CharlesStover/reactn) - React, but with built-in global state management
-- [react-facet](https://github.com/Mojang/ore-ui/tree/main/packages/%40react-facet/) - Observable-based state management for performant game UIs built in React
+- [context](#context) - React Context API (useContext)
+- [redux](#redux) - Predictable State Container for JavaScript Apps
+- [mobx](#mobx) - Simple, scalable state management
+- [react-query](#react-query) - Hooks for fetching, caching and updating asynchronous data in React
+- [flux](#flux) - Application architecture for building user interfaces
+- [recoil](#recoil) - Experimental state management library for React apps
+- [jotai](#jotai) - Bottom-up approach to React state management with an atomic model
+- [xstate-react](#xstate-react) - State machines and statecharts for the modern web
+- [zustand](#zustand) - Bear necessities for state management in React
+- [easy-peasy](#easy-peasy) - Vegetarian friendly state for React
+- [hookstate](#hookstate) - The simple but very powerful and incredibly fast state management for React that is based on hooks
+- [effector](#effector) - Fast and powerful reactive state manager
+- [reactn](#reactn) - React, but with built-in global state management
+- [react-facet](#react-facet) - Observable-based state management for performant game UIs built in React
 
 ## Explanation of each State Management
+### Context
 - [context](https://beta.reactjs.org/reference/react/useContext) - React Context API (useContext)
 > This is a built-in way to share data between components without passing props down multiple levels. It is lightweight and easy to use, making it a great option for smaller projects.
-### How to use
+#### How to use
 ```javascript
 // Context.js
 import React from 'react';
@@ -60,9 +61,10 @@ function Main() {
 }
 
 ```
+### Redux
 - [redux](https://github.com/reduxjs/redux) - Predictable State Container for JavaScript Apps
 > This is a predictable state container for JavaScript apps that helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
-### How to use
+#### How to use
 ```javascript
 // actions.js
 export const updateUser = (user) => ({
@@ -115,9 +117,10 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 ```
+### Mobx
 - [mobx](https://github.com/mobxjs/mobx) - Simple, scalable state management
 > MobX is a simple, scalable state management library that makes it easy to react to changes in your application state. With MobX, you can quickly create reactive, performant applications with a minimal amount of boilerplate code.
-### How to use
+#### How to use
 ```javascript
 // store.js
 import { observable, action } from 'mobx';
@@ -150,9 +153,10 @@ const App = observer(() => (
 
 export default App;
 ```
+### React-query
 - [react-query](https://github.com/tannerlinsley/react-query) - Hooks for fetching, caching and updating asynchronous data in React
 > This is a set of hooks for fetching, caching, and updating asynchronous data in React. It works seamlessly with the React context API and provides a powerful set of tools for managing your application data.
-### How to use
+#### How to use
 ```javascript
 // api.js
 export const fetchUser = () => {
@@ -188,9 +192,10 @@ function App() {
 
 export default App;
 ```
+### Flux
 - [flux](http://facebook.github.io/flux/) - Application architecture for building user interfaces
 > Flux is an application architecture for building user interfaces that enforces a unidirectional data flow and helps keep your code organized and maintainable.
-### How to use
+#### How to use
 ```javascript
 // constants.js
 export const UPDATE_USER = 'UPDATE_USER';
@@ -249,9 +254,10 @@ function App() {
 
 export default App;
 ```
+### Recoil
 - [recoil](https://github.com/facebookexperimental/Recoil) - Experimental state management library for React apps
 > This is an experimental state management library for React apps that provides a powerful set of tools for managing and updating your application state. It uses a novel approach to state management that makes it easy to manage complex, interrelated data structures.
-### How to use
+#### How to use
 ```javascript
 // atoms.js
 import { atom } from 'recoil';
@@ -282,9 +288,10 @@ function App() {
 
 export default App;
 ```
+### Jotai
 - [jotai](https://github.com/pmndrs/jotai) - Bottom-up approach to React state management with an atomic model
 > This library takes a bottom-up approach to React state management with an atomic model. It provides a set of tools for breaking down your application state into smaller, more manageable pieces, making it easier to reason about and debug your code.
-### How to use
+#### How to use
 ```javascript
 // store.js
 import { createStore } from 'jotai';
@@ -312,9 +319,10 @@ function App() {
 
 export default App;
 ```
+### Xstate-react
 - [xstate-react](https://github.com/davidkpiano/xstate/tree/master/packages/xstate-react) - State machines and statecharts for the modern web
 > Xstate is a library for state machines and statecharts that makes it easy to model complex, dynamic user interfaces. With Xstate-react, you can use state machines and statecharts to manage your application state in a clear and concise way.
-### How to use
+#### How to use
 ```javascript
 // state-machine.js
 import { Machine } from 'xstate';
@@ -360,9 +368,10 @@ function App() {
 
 export default App;
 ```
+### Zustand
 - [zustand](https://github.com/pmndrs/zustand) - Bear necessities for state management in React
 > Zustand is a minimalist state management library for React that provides a simple, lightweight way to manage your application state. With Zustand, you can keep your code simple and fast while still getting the benefits of a robust state management solution.
-### How to use
+#### How to use
 ```javascript
 // store.js
 import create from 'zustand';
@@ -393,9 +402,10 @@ function App() {
 
 export default App;
 ```
+### Easy-peasy
 - [easy-peasy](https://github.com/ctrlplusb/easy-peasy) - Vegetarian friendly state for React
 > Easy-Peasy is a vegetarian friendly state management library for React that provides a simple, intuitive way to manage your application state. With Easy-Peasy, you can keep your code clean and organized while still getting the power and performance you need.
-### How to use
+#### How to use
 ```javascript
 // store.js
 import { createStore } from 'easy-peasy';
@@ -429,10 +439,11 @@ function App() {
 
 export default App;
 ```
+### Hookstate
 - [hookstate](https://github.com/avkonst/hookstate) - The simple but very powerful and incredibly fast state management for React that is based on 
 hooks
 > Hookstate is a fast and powerful state management library for React that is based on hooks. With Hookstate, you can easily manage your application state in a simple, intuitive way that is optimized for performance.
-### How to use
+#### How to use
 ```javascript
 // App.js
 import React from 'react';
@@ -455,9 +466,10 @@ function App() {
 
 export default App;
 ```
+### Effector
 - [effector](https://github.com/zerobias/effector) - Fast and powerful reactive state manager
 > Effector is a fast and powerful reactive state manager that makes it easy to react to changes in your application state. With Effector, you can create fast, responsive applications with a minimal amount of boilerplate code. 
-### How to use
+#### How to use
 ```javascript
 // store.js
 import { createEvent, createStore } from 'effector';
@@ -489,9 +501,10 @@ function App() {
 
 export default App;
 ```
+### Reactn
 - [reactn](https://github.com/CharlesStover/reactn) - React, but with built-in global state management
 > Reactn is a global state management library for React that provides a simple, intuitive way to manage your application state. With Reactn, you can easily manage your application state in a way that is optimized for performance and maintainability. 
-### How to use
+#### How to use
 ```javascript
 // store.js
 import ReactN from 'reactn';
@@ -519,10 +532,11 @@ function App() {
 
 export default App;
 ```
+### React-facet
 - [react-facet](https://github.com/Mojang/ore-ui/tree/main/packages/%40react-facet/) - Observable-based state management for performant game UIs built 
 in React
 > React-Facet is an observable-based state management library for performant game UIs built in React. With React-Facet
-### How to use
+#### How to use
 ```javascript
 // store.js
 import React from 'react';
