@@ -19,8 +19,102 @@ This repository provides a deeper explanation of the various state management li
 ## Explanation of each State Management
 - [context](https://beta.reactjs.org/reference/react/useContext) - React Context API (useContext)
 > This is a built-in way to share data between components without passing props down multiple levels. It is lightweight and easy to use, making it a great option for smaller projects.
+### How to use
+```javascript
+// Context.js
+import React from 'react';
+
+const UserContext = React.createContext();
+
+export default UserContext;
+
+// App.js
+import React, { useState } from 'react';
+import UserContext from './Context';
+
+function App() {
+  const [user, setUser] = useState({ name: 'John Doe' });
+
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      <Main />
+    </UserContext.Provider>
+  );
+}
+
+// Main.js
+import React, { useContext } from 'react';
+import UserContext from './Context';
+
+function Main() {
+  const { user, setUser } = useContext(UserContext);
+
+  return (
+    <div>
+      <h1>Hello, {user.name}!</h1>
+      <button onClick={() => setUser({ name: 'Jane Doe' })}>
+        Change Name
+      </button>
+    </div>
+  );
+}
+
+```
 - [redux](https://github.com/reduxjs/redux) - Predictable State Container for JavaScript Apps
 > This is a predictable state container for JavaScript apps that helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+### How to use
+```javascript
+// actions.js
+export const updateUser = (user) => ({
+  type: 'UPDATE_USER',
+  user,
+});
+
+// reducer.js
+export default function userReducer(state = { name: 'John Doe' }, action) {
+  switch (action.type) {
+    case 'UPDATE_USER':
+      return action.user;
+    default:
+      return state;
+  }
+}
+
+// store.js
+import { createStore } from 'redux';
+import userReducer from './reducer';
+
+const store = createStore(userReducer);
+
+export default store;
+
+// App.js
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { updateUser } from './actions';
+
+function App({ user, updateUser }) {
+  return (
+    <div>
+      <h1>Hello, {user.name}!</h1>
+      <button onClick={() => updateUser({ name: 'Jane Doe' })}>
+        Change Name
+      </button>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => ({
+  user: state,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  updateUser: (user) => dispatch(updateUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+```
 - [mobx](https://github.com/mobxjs/mobx) - Simple, scalable state management
 > MobX is a simple, scalable state management library that makes it easy to react to changes in your application state. With MobX, you can quickly create reactive, performant applications with a minimal amount of boilerplate code.
 - [react-query](https://github.com/tannerlinsley/react-query) - Hooks for fetching, caching and updating asynchronous data in React
